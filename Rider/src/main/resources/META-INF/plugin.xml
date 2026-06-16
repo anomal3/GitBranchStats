@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin require-restart="true">
+    <id>com.gitbranchstats.rider</id>
+    <name>Git Branch Stats for Rider</name>
+    <vendor>GitBranchStats</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>Git4Idea</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+            id="Git Branch Stats"
+            anchor="right"
+            secondary="true"
+            canCloseContents="false"
+            icon="/icons/gitBranchStats.svg"
+            factoryClass="com.gitbranchstats.ui.GitStatsToolWindowFactory"/>
+
+        <notificationGroup
+            id="Git Branch Stats"
+            displayType="BALLOON"/>
+    </extensions>
+
+    <actions>
+        <action
+            id="GitBranchStats.ShowWindow"
+            class="com.gitbranchstats.actions.ShowGitStatsAction"
+            text="Git Branch Stats"
+            icon="/icons/gitBranchStats.svg"
+            description="Open the Git Branch Stats tool window">
+            <add-to-group group-id="ViewMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

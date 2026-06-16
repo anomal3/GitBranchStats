@@ -1,0 +1,28 @@
+<ivy-module version="2.0">
+  <info organisation="bundledPlugin" module="Git4Idea" revision="RD-253.30387.148"/>
+  <configurations>
+    <conf name="default" visibility="public"/>
+  </configurations>
+  <publications>
+    <artifact name="git4idea-rt" ext="jar" conf="default" url="plugins/vcs-git/lib"/>
+    <artifact name="vcs-git-frontend" ext="jar" conf="default" url="plugins/vcs-git/lib"/>
+    <artifact name="vcs-git" ext="jar" conf="default" url="plugins/vcs-git/lib"/>
+    <artifact name="intellij.vcs.git.frontend" ext="jar" conf="default" url="plugins/vcs-git/lib/modules"/>
+  </publications>
+  <dependencies>
+    <dependency org="bundledPlugin" name="com.jetbrains.performancePlugin" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.vcs.dvcs" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.vcs.log.graph.impl" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.collaborationTools" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.ide.impl.wsl" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.lvcs.impl" rev="RD-253.30387.148"/>
+    <dependency org="bundledPlugin" name="org.jetbrains.plugins.terminal" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.vcs.log" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.coverage" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.vcs.impl.shared" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.vcs.dvcs.impl.shared" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.frontend" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.vcs.impl.shared" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.vcs.dvcs.impl.shared" rev="RD-253.30387.148"/>
+  </dependencies>
+</ivy-module>

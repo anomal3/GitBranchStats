@@ -1,0 +1,11 @@
+<ivy-module version="2.0">
+  <info organisation="bundledModule" module="intellij.terminal.frontend" revision="RD-253.30387.148"/>
+  <configurations>
+    <conf name="default" visibility="public"/>
+  </configurations>
+  <publications/>
+  <dependencies>
+    <dependency org="bundledModule" name="intellij.platform.frontend" rev="RD-253.30387.148"/>
+    <dependency org="bundledModule" name="intellij.platform.inline.completion" rev="RD-253.30387.148"/>
+  </dependencies>
+</ivy-module>

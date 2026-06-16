@@ -1,0 +1,19 @@
+<ivy-module version="2.0">
+  <info organisation="bundledPlugin" module="Git4Idea" revision="RD-253.30387.149" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="git4idea-rt" ext="jar" conf="default" url="plugins/vcs-git/lib" />
+    <artifact name="vcs-git-frontend" ext="jar" conf="default" url="plugins/vcs-git/lib" />
+    <artifact name="vcs-git" ext="jar" conf="default" url="plugins/vcs-git/lib" />
+    <artifact name="intellij.vcs.git.frontend" ext="jar" conf="default" url="plugins/vcs-git/lib/modules" />
+  </publications>
+  <dependencies>
+    <dependency org="bundledPlugin" name="Git4Idea" rev="RD-253.30387.149" />
+    <dependency org="bundledModule" name="intellij.platform.vcs.dvcs" rev="RD-253.30387.149" />
+    <dependency org="bundledModule" name="intellij.platform.vcs.log.graph.impl" rev="RD-253.30387.149" />
+    <dependency org="bundledModule" name="intellij.platform.collaborationTools" rev="RD-253.30387.149" />
+    <dependency org="bundledModule" name="intellij.platform.ide.impl.wsl" rev="RD-253.30387.149" />
+  </dependencies>
+</ivy-module>
