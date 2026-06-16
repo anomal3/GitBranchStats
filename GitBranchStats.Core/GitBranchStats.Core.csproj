@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>GitBranchStats.Core</RootNamespace>
+    <AssemblyName>GitBranchStats.Core</AssemblyName>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LibGit2Sharp" Version="0.31.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- DataContractJsonSerializer for persisting settings and custom translations -->
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+
+</Project>

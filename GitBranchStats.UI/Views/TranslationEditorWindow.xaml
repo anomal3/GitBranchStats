@@ -1,0 +1,56 @@
+<vsui:DialogWindow x:Class="GitBranchStats.UI.Views.TranslationEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="clr-namespace:GitBranchStats.UI.Localization"
+        xmlns:vs="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
+        xmlns:vsui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
+        Title="{loc:Translate Editor_Title}"
+        Width="760" Height="580"
+        WindowStartupLocation="CenterOwner"
+        MinWidth="520" MinHeight="360"
+        Background="{DynamicResource {x:Static vs:VsBrushes.WindowKey}}">
+
+    <vsui:DialogWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/GitBranchStats.UI;component/Theme/VsTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </vsui:DialogWindow.Resources>
+
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{loc:Translate Editor_Hint}"
+                   TextWrapping="Wrap" Foreground="{DynamicResource {x:Static vs:VsBrushes.GrayTextKey}}" Margin="0,0,0,10"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="{loc:Translate Editor_LanguageName}" VerticalAlignment="Center" FontWeight="SemiBold" Margin="0,0,8,0"/>
+            <TextBox Text="{Binding LanguageName, UpdateSourceTrigger=PropertyChanged}"
+                     Width="260" Height="24" VerticalContentAlignment="Center"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="2" x:Name="Grid"
+                  ItemsSource="{Binding Rows}"
+                  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                  HeadersVisibility="Column" GridLinesVisibility="All"
+                  SelectionUnit="Cell">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{loc:Translate Editor_Col_English}"
+                                    Binding="{Binding English}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="{loc:Translate Editor_Col_Translation}"
+                                    Binding="{Binding Translation, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+            <Button Content="{loc:Translate Editor_Save}" Click="OnSave" MinWidth="90" Padding="10,5" Margin="0,0,8,0"/>
+            <Button Content="{loc:Translate Editor_Cancel}" Click="OnCancel" MinWidth="90" Padding="10,5" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</vsui:DialogWindow>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidGitBranchStatsPackage">
+
+    <!-- Groups -->
+    <Groups>
+      <Group guid="guidGitBranchStatsCmdSet" id="MyMenuGroup" priority="0x0600">
+        <!-- Places the command directly in the top-level View menu (Вид) -->
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_VIEW"/>
+      </Group>
+    </Groups>
+
+    <!-- Menu items (buttons) -->
+    <Buttons>
+      <Button guid="guidGitBranchStatsCmdSet" id="CmdIdShowBranchStatsWindow" priority="0x0100" type="Button">
+        <Parent guid="guidGitBranchStatsCmdSet" id="MyMenuGroup"/>
+        <Icon guid="guidImages" id="bmpPic1"/>
+        <Strings>
+          <ButtonText>Git Branch Stats</ButtonText>
+          <CommandName>GitBranchStats</CommandName>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <!-- Bitmaps -->
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\icon.png" usedList="bmpPic1"/>
+    </Bitmaps>
+
+  </Commands>
+
+  <!-- Symbols -->
+  <Symbols>
+    <GuidSymbol name="guidGitBranchStatsPackage" value="{e8b4d4a0-5f2e-4d1a-9c8b-3a6f7e2d4c1b}" />
+
+    <GuidSymbol name="guidGitBranchStatsCmdSet" value="{a1c2e3f4-5b6d-4c7e-9f0a-1b2c3d4e5f6a}">
+      <IDSymbol name="MyMenuGroup" value="0x0000"/>
+      <IDSymbol name="CmdIdShowBranchStatsWindow" value="0x0100"/>
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{b2c3d4e5-f6a7-4c8f-9f0b-2c3d4e5f6a7b}">
+      <IDSymbol name="bmpPic1" value="1"/>
+    </GuidSymbol>
+  </Symbols>
+
+</CommandTable>
