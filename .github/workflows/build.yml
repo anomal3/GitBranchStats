@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  release:
+    types: [ published ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore
+        run: msbuild GitBranchStats\GitBranchStats.csproj -t:Restore -p:Configuration=Release -v:minimal
+
+      - name: Build VSIX
+        run: msbuild GitBranchStats\GitBranchStats.csproj -t:Rebuild -p:Configuration=Release -p:DeployExtension=false -v:minimal
+
+      - name: Upload VSIX as build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GitBranchStats-vsix
+          path: GitBranchStats/bin/Release/GitBranchStats.vsix
+
+      - name: Attach VSIX to the release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: GitBranchStats/bin/Release/GitBranchStats.vsix

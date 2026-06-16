@@ -1,11 +1,22 @@
 <div align="center">
 
-<img src="logo.png" width="112" alt="Git Branch Stats logo" />
+<img src="logo.png" width="100" alt="Git Branch Stats logo" />
 
 # Git Branch Stats
 
-A Visual Studio extension that shows Git branch statistics — author activity,
-branch switching, and branch comparison — in a themed, localizable tool window.
+**Git branch statistics inside Visual Studio** — author activity, branch switching,
+and branch comparison in a themed, localizable tool window.
+
+<a href="https://marketplace.visualstudio.com/items?itemName=GitBrachStatistic.GitBranchStats">
+  <img src="https://img.shields.io/badge/Install%20from-Visual%20Studio%20Marketplace-007ACC?style=for-the-badge&logo=visualstudio&logoColor=white" alt="Install from Visual Studio Marketplace" />
+</a>
+
+<br/><br/>
+
+[![Build](https://github.com/anomal3/GitBranchStats/actions/workflows/build.yml/badge.svg)](https://github.com/anomal3/GitBranchStats/actions/workflows/build.yml)
+[![Version](https://vsmarketplacebadges.dev/version-short/GitBrachStatistic.GitBranchStats.svg)](https://marketplace.visualstudio.com/items?itemName=GitBrachStatistic.GitBranchStats)
+[![Installs](https://vsmarketplacebadges.dev/installs-short/GitBrachStatistic.GitBranchStats.svg)](https://marketplace.visualstudio.com/items?itemName=GitBrachStatistic.GitBranchStats)
+[![Rating](https://vsmarketplacebadges.dev/rating-star/GitBrachStatistic.GitBranchStats.svg)](https://marketplace.visualstudio.com/items?itemName=GitBrachStatistic.GitBranchStats)
 
 </div>
 
@@ -61,8 +72,9 @@ selectable language. Anything you leave blank stays in English.
 
 ## Installation
 
-Install from the **Visual Studio Marketplace**, or download the latest
-`GitBranchStats.vsix` and double-click it to install.
+Install from the [**Visual Studio Marketplace**](https://marketplace.visualstudio.com/items?itemName=GitBrachStatistic.GitBranchStats),
+or download `GitBranchStats.vsix` from the [latest release](https://github.com/anomal3/GitBranchStats/releases/latest)
+and double-click it to install.
 
 ## Building from source
 
