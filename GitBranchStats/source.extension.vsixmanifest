@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Language="en-US" Id="GitBranchStats" Version="1.0.0" Publisher="GitBranchStats" />
+    <Identity Language="en-US" Id="GitBranchStats" Version="1.0.0" Publisher="Git Brach Statistic" />
     <DisplayName>Git Branch Stats</DisplayName>
     <Description xml:space="preserve">Visual Studio 2022 extension that shows Git branch statistics: per-author commits, files changed, lines added/deleted, branch switching and branch comparison.</Description>
     <Tags>Git, branch, statistics, VSPackage, tool window</Tags>
