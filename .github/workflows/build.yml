@@ -3,6 +3,7 @@ name: Build
 on:
   push:
     branches: [ master ]
+    tags: [ 'v*' ]
   pull_request:
     branches: [ master ]
   release:
@@ -11,6 +12,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -35,8 +40,10 @@ jobs:
           name: GitBranchStats-vsix
           path: GitBranchStats/bin/Release/GitBranchStats.vsix
 
-      - name: Attach VSIX to the release
-        if: github.event_name == 'release'
+      # Attaches the VSIX to the release. Triggered either by publishing a release in
+      # the GitHub UI, or by pushing a tag like v1.0.0 (which creates the release).
+      - name: Publish VSIX to the release
+        if: github.event_name == 'release' || startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
           files: GitBranchStats/bin/Release/GitBranchStats.vsix
