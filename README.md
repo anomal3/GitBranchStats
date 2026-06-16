@@ -11,7 +11,7 @@ branch switching, and branch comparison in a themed, localizable tool window.
   <img src="https://img.shields.io/badge/Visual%20Studio%20Marketplace-Install-007ACC?style=for-the-badge&logo=visualstudio&logoColor=white" alt="Install from Visual Studio Marketplace" />
 </a>
 &nbsp;
-<a href="https://plugins.jetbrains.com/plugin/com.gitbranchstats">
+<a href="https://plugins.jetbrains.com/plugin/32323-git-branch-stats">
   <img src="https://img.shields.io/badge/JetBrains%20Marketplace-Install-000000?style=for-the-badge&logo=jetbrains&logoColor=white" alt="Install from JetBrains Marketplace" />
 </a>
 
